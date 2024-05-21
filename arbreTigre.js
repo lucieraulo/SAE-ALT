@@ -2,7 +2,7 @@
 
 async function afficherGraphique(){
 
-    let mesDonnees = await d3.csv("tigres.csv");
+    let mesDonnees = await d3.csv("data.csv");
 
     const root = d3.stratify()
         .id((d) => d.name)
