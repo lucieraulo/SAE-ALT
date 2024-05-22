@@ -46,8 +46,8 @@ async function afficherGraphique(){
 
   const link = svg.append("g")
       .attr("fill", "none")
-      .attr("stroke", "#555")
-      .attr("stroke-opacity", 0.4)
+      .attr("stroke", "yellow")
+      .attr("stroke-opacity", 1)
       .attr("stroke-width", 1.5)
     .selectAll()
       .data(root.links())
