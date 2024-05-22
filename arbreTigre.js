@@ -79,9 +79,9 @@ async function afficherGraphique(){
 
   const link = svg.append("g")
       .attr("fill", "none")
-      .attr("stroke", "yellow")
-      .attr("stroke-opacity", 1)
-      .attr("stroke-width", 1.5)
+      .attr("stroke", "red")
+      .attr("stroke-opacity", 0.4)
+      .attr("stroke-width", 1)
     .selectAll()
       .data(root.links())
       .join("path")
@@ -98,7 +98,7 @@ async function afficherGraphique(){
       .attr("transform", d => `translate(${d.y},${d.x})`);
 
   node.append("circle")
-      .attr("fill", d => d.children ? "#555" : "#999")
+      .attr("fill", d => d.children ? "bleu" : "bleu")
       .attr("r", 2.5);
 
   node.append("text")
