@@ -1,13 +1,46 @@
-
-
 async function afficherGraphique(){
 
-    let mesDonnees = await d3.csv("data.csv");
+  async function createHierarchy() {
+      // Lire les données CSV
+      let data = await d3.csv('data.csv');
 
-    const root = d3.stratify()
-        .id((d) => d.name)
-        .parentId((d) => d.parent)
-        (mesDonnees);
+      // Transformer les données en une structure de données hiérarchique
+      let hierarchyData = data.map(d => {
+          return {
+              name: d.nom_code,
+              children: [
+                  {
+                      name: 'Comprendre',
+                      children: d.c1.split(';').map(c => ({ name: c }))
+                  },
+                  {
+                      name: 'Concevoir',
+                      children: d.c2.split(';').map(c => ({ name: c }))
+                  },
+                  {
+                      name: 'Exprimer',
+                      children: d.c3.split(';').map(c => ({ name: c }))
+                  },
+                  {
+                      name: 'Développer',
+                      children: d.c4.split(';').map(c => ({ name: c }))
+                  },
+                  {
+                      name: 'Entreprendre',
+                      children: d.c5.split(';').map(c => ({ name: c }))
+                  }
+              ]
+          };
+      });
+
+      // Créer une hiérarchie à partir des données
+      let root = d3.hierarchy({ children: hierarchyData })
+          .sum(d => d.value);
+
+      return root;
+  }
+
+  const root = await createHierarchy();
 
     console.log(root);
 
