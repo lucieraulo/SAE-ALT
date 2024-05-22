@@ -1,97 +1,118 @@
-const config = {
-    type: 'radar',
-    data: data,
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: 'Chart.js Radar Chart'
+async function csv_extractor(){
+    const data_csv = await d3.csv("data.csv",d=>{
+        return {nom_code:d.nom_code,c1:d.c1,c2:d.c2,c3:d.c3,c4:d.c4,c5:d.c5,nom_complet:d.nom_complet,bg:d.bg,border:d.border};
+    });
+    console.log(data_csv);
+    const datasets = {}
+    data_csv.forEach(element => {
+        document.getElementById("datasetSelector").innerHTML += "<option value='"+element.nom+"'>"+element.nom+"</option>";
+        datasets[element.nom]= {
+            label: element.nom,
+            data: element.data.split(";").map(e=>parseInt(e)),
+            fill: true,
+            backgroundColor: element.bg,
+            borderColor: element.border,
+            pointBackgroundColor: element.border,
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: element.bg
         }
-      }
-    },
-  };
+    });
 
-  
-  const DATA_COUNT = 7;
-const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+    const myData = [
+        { x: "Nom_code", y: 1, color: "yellow" },
+        { x: "c1", y: 2, color: "blue" },
+        { x: "c2", y: 3, color: "cyan" },
+        { x: "c3", y: 4, color: "pink" },
+        { x: "c4", y: 5, color: "cyan" },
+        { x: "c5", y: 5, color: "red" },
+        { x: "nom_complet", y: 5, color: "green" },
+    ];
 
-const labels = Utils.months({count: 7});
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: Utils.numbers(NUMBER_CFG),
-      borderColor: Utils.CHART_COLORS.red,
-      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-    },
-    {
-      label: 'Dataset 2',
-      data: Utils.numbers(NUMBER_CFG),
-      borderColor: Utils.CHART_COLORS.blue,
-      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-    }
-  ]
-};
+    // dimensions totale avec marge graphique
 
+    const widthsvg = 1000;
+    heightsvg = 500;
+    const margin = { 'top': 20, 'bottom': 20, 'left': 28, 'right': 20 };
+    const width = widthsvg - margin.left - margin.right;
+    const height = heightsvg - margin.top - margin.bottom
 
-const actions = [
-    {
-      name: 'Randomize',
-      handler(chart) {
-        chart.data.datasets.forEach(dataset => {
-          dataset.data = Utils.numbers({count: chart.data.labels.length, min: 0, max: 100});
-        });
-        chart.update();
-      }
-    },
-    {
-      name: 'Add Dataset',
-      handler(chart) {
-        const data = chart.data;
-        const dsColor = Utils.namedColor(chart.data.datasets.length);
-        const newDataset = {
-          label: 'Dataset ' + (data.datasets.length + 1),
-          backgroundColor: Utils.transparentize(dsColor, 0.5),
-        borderColor: dsColor,
-        data: Utils.numbers({count: data.labels.length, min: 0, max: 100}),
-      };
-      chart.data.datasets.push(newDataset);
-      chart.update();
-    }
-  },
-  {
-    name: 'Add Data',
-    handler(chart) {
-      const data = chart.data;
-      if (data.datasets.length > 0) {
-        data.labels = Utils.months({count: data.labels.length + 1});
+    //axes et échelles 
 
-        for (let index = 0; index < data.datasets.length; ++index) {
-          data.datasets[index].data.push(Utils.rand(0, 100));
+    const xscale = d3.scaleBand(myData.map(row => row.x), [0, width])
+        .padding(0.5);
+    const yscale = d3.scaleLinear()
+        .domain([0, 4])
+        .range([height, 0]);
+    const xaxis = d3.axisBottom(xScale);
+    const yaxis = d3.axisBottom(yScale);
+
+    // BALISE svg 
+    const mySvg = d3.select("#D3JS")
+        .append("svg")
+        .attr("viewBox", [0, 0, widthsvg, heightsvg]);
+
+    const myChart = MySvg.append("g")
+
+        .selectAll("rect")
+        .data(myData)
+        .join("rect")
+        .attr("x", d => xScale(d, x))
+        .attr("y", d => yScale(d, y))
+        .attr("width", d => xScale.bandwith)
+        .attr("height", d => height - yScale(d, y))
+        .attr("fill", d => d.color)
+        .attr("stroke", black)
+        .attr("stroke-width", 4)
+
+    const ctx = document.getElementById('graphChartJS');
+
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Comprendre', 'Concevoir', 'Exprimer', 'Developer', 'Entreprendre'],
+            datasets: [{
+                data: [1, 2, 3, 4, 5, 6],
+                BarPercentage: 0.5,
+                backgroundColor: ['yellow', 'blue', 'cyan', 'pink', 'green', 'purple'],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
+    });
 
-        chart.update();
-      }
-    }
-  },
-  {
-    name: 'Remove Dataset',
-    handler(chart) {
-      chart.data.datasets.pop();
-      chart.update();
-    }
-  },
-  {
-    name: 'Remove Data',
-    handler(chart) {
-      chart.data.labels.splice(-1, 1); // remove the label first
-      chart.data.datasets.forEach(dataset => {
-        dataset.data.pop();
-      });
+    const mydata = [
+        { x: "Comprendre", y: 1, color: "yellow" },
+        { x: "Concevoir", y: 2, color: "blue" },
+        { x: "Exprimer", y: 3, color: "cyan" },
+        { x: "Developer", y: 4, color: "pink" },
+        { x: "Entreprendre", y: 5, color: "black" },
+    ]
 
-      chart.update();
-    }
-  }
-];
+    const widthSvg = 1000;
+    heightsvg = 500;
+    const Margin = { 'top': 20, 'bottom': 20, 'left': 28, 'right': 20 };
+    const Width = widthsvg - margin.left - margin.right;
+    const Height = heightsvg - margin.top - margin.bottom
+
+    const xScale = d3.scaleBand(myData.map(row => row.x), [0, width]).padding(0.5);
+    const xAxis = d3.axisBottom(xScale);
+
+    const yScale = d3.scaleLinear([0, 4], [0, height]);
+    const yAxis = d3.axisBottom(yScale);
+
+
+    const MySvg = d3.select("#D3JS")
+        .append("svg")
+        .attr("viewBox", [0, 0, widthSvg, heightSvg]);
+
+
+
+    const MyChart = MySvg.append("g");
+}
