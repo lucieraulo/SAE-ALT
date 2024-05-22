@@ -1,119 +1,129 @@
-async function afficherGraphique(){
-
+async function afficherGraphique() {
   async function createHierarchy() {
       // Lire les données CSV
-      let data = await d3.csv('data.csv');
+      let data = await d3.csv("data.csv");
 
       // Transformer les données en une structure de données hiérarchique
-      let hierarchyData = data.map(d => {
+      let hierarchyData = data.map((d) => {
           return {
               name: d.nom_code,
+              colname: "Level2",
               children: [
                   {
-                      name: 'Comprendre',
-                      children: d.c1.split(';').map(c => ({ name: c }))
+                      name: "Comprendre",
+                      children: d.c1.split(";").map((c) => ({ name: c })),
+                      value: d.c1.split(";").length,
+                      colname: "Level3",
                   },
                   {
-                      name: 'Concevoir',
-                      children: d.c2.split(';').map(c => ({ name: c }))
+                      name: "Concevoir",
+                      children: d.c2.split(";").map((c) => ({ name: c })),
+                      value: d.c2.split(";").length,
+                      colname: "Level3",
                   },
                   {
-                      name: 'Exprimer',
-                      children: d.c3.split(';').map(c => ({ name: c }))
+                      name: "Exprimer",
+                      children: d.c3.split(";").map((c) => ({ name: c })),
+                      value: d.c3.split(";").length,
+                      colname: "Level3",
                   },
                   {
-                      name: 'Développer',
-                      children: d.c4.split(';').map(c => ({ name: c }))
+                      name: "Développer",
+                      children: d.c4.split(";").map((c) => ({ name: c })),
+                      value: d.c4.split(";").length,
+                      colname: "Level3",
                   },
                   {
-                      name: 'Entreprendre',
-                      children: d.c5.split(';').map(c => ({ name: c }))
-                  }
-              ]
+                      name: "Entreprendre",
+                      children: d.c5.split(";").map((c) => ({ name: c })),
+                      value: d.c5.split(";").length,
+                      colname: "Level3",
+                  },
+              ],
           };
       });
 
       // Créer une hiérarchie à partir des données
-      let root = d3.hierarchy({ children: hierarchyData })
-          .sum(d => d.value);
+      let root = d3.hierarchy({ children: hierarchyData }).sum((d) => d.value);
 
       return root;
   }
 
   const root = await createHierarchy();
+  console.log(root);
 
-    console.log(root);
+  let firstThree = root.children
+      .slice(0, 3)
+      .map((node) => ({ name: node.data.name, value: node.value }));
+  console.log(firstThree);
 
-    const width = 928;
-
-  // Compute the tree height; this approach will allow the height of the
-  // SVG to scale according to the breadth (width) of the tree layout.
-  const dx = 10;
-  const dy = width / (root.height + 1);
-
-  // Create a tree layout.
-  const tree = d3.tree().nodeSize([dx, dy]);
-
-  // Sort the tree and apply the layout.
-  root.sort((a, b) => d3.ascending(a.data.name, b.data.name));
-  tree(root);
-
-  // Compute the extent of the tree. Note that x and y are swapped here
-  // because in the tree layout, x is the breadth, but when displayed, the
-  // tree extends right rather than down.
-  let x0 = Infinity;
-  let x1 = -x0;
-  root.each(d => {
-    if (d.x > x1) x1 = d.x;
-    if (d.x < x0) x0 = d.x;
+  let select = document.getElementById("sae-input-id");
+  firstThree.forEach((item) => {
+      let option = document.createElement("option");
+      option.value = item.name;
+      option.text = item.name;
+      select.appendChild(option);
   });
 
-  // Compute the adjusted height of the tree.
-  const height = x1 - x0 + dx * 2;
+  select.addEventListener("change", function () {
+      let selectedName = this.options[this.selectedIndex].value;
+      updateTreemap(selectedName);
+  });
 
-  const svg = d3.create("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [-dy / 3, x0 - dx, width, height])
-      .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
+  // Définir les dimensions et les marges du graphique
+  var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+      width = 445 - margin.left - margin.right,
+      height = 445 - margin.top - margin.bottom;
 
-  const link = svg.append("g")
-      .attr("fill", "none")
-      .attr("stroke", "#555")
-      .attr("stroke-opacity", 0.4)
-      .attr("stroke-width", 1.5)
-    .selectAll()
-      .data(root.links())
-      .join("path")
-        .attr("d", d3.linkHorizontal()
-            .x(d => d.y)
-            .y(d => d.x));
-  
-  const node = svg.append("g")
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-width", 3)
-    .selectAll()
-    .data(root.descendants())
-    .join("g")
-      .attr("transform", d => `translate(${d.y},${d.x})`);
+  // Ajouter l'objet svg au corps de la page
+  var svg = d3.select("#my_dataviz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  node.append("circle")
-      .attr("fill", d => d.children ? "#555" : "#999")
-      .attr("r", 2.5);
+  // Fonction pour mettre à jour le treemap
+  function updateTreemap(selectedName) {
+      let selectedNode = root.children.find(d => d.data.name === selectedName);
 
-  node.append("text")
-      .attr("dy", "0.31em")
-      .attr("x", d => d.children ? -6 : 6)
-      .attr("text-anchor", d => d.children ? "end" : "start")
-      .text(d => d.data.name)
-      .attr("stroke", "white")
-      .attr("paint-order", "stroke");
+      if (!selectedNode) {
+          return;
+      }
 
-    const canva = document.getElementById("arbreD3JS");
-  //Afficher le svg dans le canva
-    canva.appendChild(svg.node());
-  
-  return svg.node();
+      // Effacer l'ancien graphique
+      svg.selectAll("*").remove();
 
+      // Créer le treemap pour le nœud sélectionné
+      d3.treemap()
+          .size([width, height])
+          .padding(2)
+          (selectedNode);
+
+      // Utiliser ces informations pour ajouter des rectangles
+      svg.selectAll("rect")
+          .data(selectedNode.leaves())
+          .enter()
+          .append("rect")
+          .attr('x', function (d) { return d.x0; })
+          .attr('y', function (d) { return d.y0; })
+          .attr('width', function (d) { return d.x1 - d.x0; })
+          .attr('height', function (d) { return d.y1 - d.y0; })
+          .style("stroke", "black")
+          .style("fill", "slateblue");
+
+      // Ajouter les étiquettes de texte
+      svg.selectAll("text")
+          .data(selectedNode.leaves())
+          .enter()
+          .append("text")
+          .attr("x", function (d) { return d.x0 + 5; })
+          .attr("y", function (d) { return d.y0 + 20; })
+          .text(function (d) { return d.data.name; })
+          .attr("font-size", "15px")
+          .attr("fill", "black");
+  }
+
+  // Initialiser le treemap avec la première option
+  updateTreemap(firstThree[0].name);
 }
-
