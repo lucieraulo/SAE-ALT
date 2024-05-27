@@ -1,0 +1,20 @@
+{
+    "datasets": [
+      {
+        "label": "SAE202",
+        "data": [20, 30, 40, 50, 60],
+        "labels": ["Label1", "Label2", "Label3", "Label4", "Label5"],
+        "backgroundColor": ["rgba(255, 99, 132, 0.2)"],
+        "borderColor": ["rgba(255, 99, 132, 1)"],
+        "borderWidth": 1
+      },
+      {
+        "label": "SAE203",
+        "data": [25, 35, 45, 55, 65],
+        "labels": ["Label6", "Label7", "Label8", "Label9", "Label10"],
+        "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
+        "borderColor": ["rgba(54, 162, 235, 1)"],
+        "borderWidth": 1
+      }
+    ]
+  }

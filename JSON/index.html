@@ -8,7 +8,17 @@
     <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 <body>
-    <div id="my_dataviz"></div>
+    <div class="mainContainer">
+        <select id="saeSelect">
+            <option value="0">-- selectioner une option --</option>
+        </select>
+        <div id="my_dataviz"></div>
+        <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
+        <div id="chart-container"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
 </body>
 </html>
