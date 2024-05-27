@@ -18,7 +18,7 @@
       }
       {
         "label": "SAE105",
-        "data": [25, 35, 45, 55, 65],
+        "data": [100, 60, 77, 80, 60, 80, 70, 80, 100],
         "labels": ["Organiser un projet web en PHP/HTML/CSS", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédias (vidéos, photos) et des éléments de design (couleur, typo, etc) - niveau 1", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédia et de design - niveau 2", "Générer des pages à partir d'un jeu de données fournis (fichiers json et api.php)", "S'approprier / Manipuler les données au format JSON", "Traduire des pages en HTML/CSS, à partir d'une maquette d'interfaces simples, de type Figma", "Appliquer les connaissances en ergonomie IHM en vue d'adapter la conception et le fonctionnement des interfaces d'un site aux besoins des utilisateurs/cibles", "Elaborer un mockup, wireframes, flows et maquettes - niveau 1", "Définir des planches univers > styles"],
         "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
         "borderColor": ["rgba(54, 162, 235, 1)"],
