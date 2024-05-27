@@ -39,7 +39,9 @@ d3.json("datatreemap.json", function (data) {
 // Créer une hiérarchie à partir des données -------------------------------------
 
 function createTreeMap(jsonData) {
-  // set the dimensions and margins of the graph
+
+
+
   var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     width = 445 - margin.left - margin.right,
     height = 445 - margin.top - margin.bottom;
@@ -106,12 +108,22 @@ var svg = d3
     .attr("height", function (d) {
       return d.y1 - d.y0;
     })
-    .style("stroke", "black")
+    .style("stroke", "none")
     .style("fill", function (d) {
-      return color(d.parent.data.name);
+      if (d.parent.data.name === "Comprendre") {
+        return "#F2622E";
+      } else if (d.parent.data.name === "Concevoir") {
+        return "#F2E313";
+      } else if (d.parent.data.name === "Exprimer") {
+        return "#4BF286";
+      } else if (d.parent.data.name === "Entreprendre") {
+        return "#B294F2";
+      } else if (d.parent.data.name === "Developper") {
+        return "#88A2F2";
+      } 
     })
     .style("opacity", function (d) {
-      return opacity(d.data.value);
+      return opacity(100);
     });
 
   // and to add the text labels
@@ -144,11 +156,10 @@ var svg = d3
     .attr("y", function (d) {
       return d.y0 + 35;
     }) // +20 to adjust position (lower)
-    .text(function (d) {
-      return d.data.value;
-    })
+    .text("")
     .attr("font-size", "11px")
-    .attr("fill", "white");
+    .attr("font-weight", "bold")
+    .attr("fill","white");
 
   // Add title for the 3 groups
   svg
@@ -170,9 +181,7 @@ var svg = d3
       return d.data.name;
     })
     .attr("font-size", "19px")
-    .attr("fill", function (d) {
-      return color(d.data.name);
-    });
+    .attr("fill","white");
 
   // Add title for the 3 groups
   svg
