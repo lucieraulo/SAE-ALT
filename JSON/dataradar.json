@@ -9,13 +9,13 @@
         "borderWidth": 1
       },
       {
-        "label": "SAE202",
-        "data": [25, 35, 45, 55, 65],
-        "labels": ["Label6", "Label7", "Label8", "Label9", "Label10"],
+        "label": "SAE102",
+        "data": [50, 40, 45, 60, 70, 80, 70, 100, 90, 70, 60],
+        "labels": ["Rédiger des écrits professionnels : dossier", "Analyser un cahier des charges", "Réaliser un audit", "Définir les valeurs, un esprit et un ton", "Discerner les cibles en construisant des personas", " Définir un positionnement produit", " Proposer un axe de communication au commanditaire", "Établir un plan de communication et un planning des actions à entreprendre", "Rédiger une charte éditoriale pour un site web, un blog, un réseau social (préconisations rédactionnelles, référencement naturel)", "Réaliser des prototypes de communication", "Construire un support de communication (diaporama) clair et efficace pour présenter ses choix stratégiques et le plan de communication"],
         "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
         "borderColor": ["rgba(54, 162, 235, 1)"],
         "borderWidth": 1
-      }
+      },
       {
         "label": "SAE105",
         "data": [100, 60, 77, 80, 60, 80, 70, 80, 100],
