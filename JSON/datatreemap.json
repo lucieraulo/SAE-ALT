@@ -28,57 +28,43 @@
       "colname": "level1"
     },
     {
-      "name": "SAE203",
+      "name": "SAE101",
       "children": [
         {
-          "name": "Comprendre",
-          "children": [
-            { "name": "mister_a", "group": "A", "value": 28, "colname": "level3" },
-            { "name": "mister_b", "group": "A", "value": 19, "colname": "level3" },
-            { "name": "mister_c", "group": "C", "value": 18, "colname": "level3" },
-            { "name": "mister_d", "group": "C", "value": 19, "colname": "level3" }
-          ],
-          "colname": "level2"
-        },
-        {
-          "name": "Concevoir",
-          "children": [
-            { "name": "mister_e", "group": "C", "value": 14, "colname": "level3" },
-            { "name": "mister_f", "group": "A", "value": 11, "colname": "level3" },
-            { "name": "mister_g", "group": "B", "value": 15, "colname": "level3" },
-            { "name": "mister_h", "group": "B", "value": 16, "colname": "level3" }
-          ],
-          "colname": "level2"
-        },
-        {
           "name": "Exprimer",
-          "children": [
-            { "name": "mister_i", "group": "B", "value": 10, "colname": "level3" },
-            { "name": "mister_j", "group": "A", "value": 13, "colname": "level3" },
-            { "name": "mister_k", "group": "A", "value": 13, "colname": "level3" },
-            { "name": "mister_l", "group": "D", "value": 25, "colname": "level3" },
-            { "name": "mister_m", "group": "D", "value": 16, "colname": "level3" },
-            { "name": "mister_n", "group": "D", "value": 28, "colname": "level3" }
+            "children": [
+            { "name": "Isométrie", "value": 10, "colname": "level3" },
+            { "name": "Message", "value": 10, "colname": "level3" },
+            { "name": "Montage", "value": 10, "colname": "level3" },
+            { "name": "Émotion", "value": 10, "colname": "level3" },
+            { "name": "Retouche", "value": 10, "colname": "level3" },
+            { "name": "Mise en page", "value": 10, "colname": "level3" },
+            { "name": "Collage", "value": 10, "colname": "level3" },
+            { "name": "Technique", "value": 10, "colname": "level3" },
+            { "name": "Affinity", "value": 10, "colname": "level3" },
+            { "name": "Edition", "value": 10, "colname": "level3" }
           ],
           "colname": "level2"
-        },
+        }
+      ],
+      "colname": "level1"
+    },
+    {
+      "name": "SAE105",
+      "children": [
         {
           "name": "Developper",
-          "children": [
-            { "name": "mister_e", "group": "C", "value": 14, "colname": "level3" },
-            { "name": "mister_f", "group": "A", "value": 11, "colname": "level3" },
-            { "name": "mister_g", "group": "B", "value": 15, "colname": "level3" },
-            { "name": "mister_h", "group": "B", "value": 16, "colname": "level3" }
-          ],
-          "colname": "level2"
-        },
-        {
-          "name": "Entreprendre",
-          "children": [
-            { "name": "mister_e", "group": "C", "value": 14, "colname": "level3" },
-            { "name": "mister_f", "group": "A", "value": 11, "colname": "level3" },
-            { "name": "mister_g", "group": "B", "value": 15, "colname": "level3" },
-            { "name": "mister_h", "group": "B", "value": 16, "colname": "level3" }
+            "children": [
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" },
+            { "name": "REMPLIR", "value": 10, "colname": "level3" }
           ],
           "colname": "level2"
         }

@@ -1,10 +1,12 @@
 .mainContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+    align-items: start;
+    justify-content: start;
+    margin-top: 100px;
     width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 #chart-container {
@@ -19,4 +21,217 @@ body {
     background-color: #000;
     margin: 0;
     padding: 0;
+}
+
+/* FONT */
+
+@font-face {
+    font-family: 'Newake';
+    src: url('../font/newake/NewakeFont-Demo.otf') format('opentype');
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* INITIALISATION */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: #1c1c1c;
+    font-family: 'Newake', sans-serif;
+    overflow-x: hidden;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newake', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    /* backdrop-filter: blur(10px); */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header * {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0px 20px;
+}
+
+header nav ul li{
+    color: white;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+header nav ul li:hover {
+    transform: scale(1.1);
+}
+
+.section-header img {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centrer l'image horizontalement */
+    transform: translateX(-50%); /* Centrer l'image horizontalement */
+    z-index: -999;
+    object-fit: cover;
+    width: 100%; /* Limiter la largeur de l'image à la largeur de .section-header */
+    height: 70%; /* Limiter la hauteur de l'image à la hauteur de .section-header */
+}
+
+.section-header {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.colorfilter {
+    position: absolute;
+    width: 100vw;
+    height: 70vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top,
+            #1c1c1c,
+            rgba(0, 0, 0, 0.281));
+    z-index: -998;
+}
+
+.headercontent {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: white;
+    margin-top: 400px;
+}
+
+.headercontent h1 {
+    font-size: 7rem;
+    margin-bottom: 20px;
+}
+
+.header-statut {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'Newake', sans-serif;
+    margin-top: -20px;
+    text-transform: uppercase;
+}
+
+.section-about {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: #1c1c1c;
+    width: 100%;
+    height: fit-content;
+    padding: 20px 100px;
+    margin-top: 450px;
+}
+
+.section-about img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-about *{
+    color: white;
+}
+
+/* MES COMPETENCES / HOME */
+
+.section-mes-competences {
+    margin-top: 60px;
+}
+
+.section-mes-competences span {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #f5f5f5;
+    font-family: 'roboto', sans-serif;
+    border-radius: 25px;
+    padding: 7px 15px;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+.tags-container {
+    margin-top: 30px;
+}
+
+.red {
+    background-color: #F2622E;
+} 
+
+.yellow {
+    background-color: #F2E313;
+}
+
+.green {
+    background-color: #4BF286;
+}
+  
+.blue {
+    background-color: #88A2F2;
+}
+
+.purple {
+    background-color: #B294F2;
+}
+
+.visual-title {
+    margin-top: 100px;
+}
+
+#saeSelect {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#saeSelect option {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+svg {
+    margin-left: -18px;
 }
