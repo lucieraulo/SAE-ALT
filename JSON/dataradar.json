@@ -1,28 +1,28 @@
 {
-    "datasets": [
-      {
-        "label": "SAE101",
-        "data": [60, 80, 50, 70, 60],
-        "labels": ["Identifier les cibles (critères socio-économiques, démographiques, géographiques, culturels...)", "Analyser des formes médiatiques et leur sémiotique", "Produire des analyses statistiques descriptives et les interpréter pour évaluer un contexte socio-économique", "Evaluer un site web, un produit multimédia ou un dispositif interactif existant en s’appuyant sur des guides de bonnes pratiques", "Présenter une organisation, ses activités et son environnement (économique, sociologique, culturel, juridique, technologique, communicationnel et médiatique)"],
-        "backgroundColor": ["rgba(255, 99, 132, 0.2)"],
-        "borderColor": ["rgba(255, 99, 132, 1)"],
-        "borderWidth": 1
-      },
-      {
-        "label": "SAE102",
-        "data": [50, 40, 45, 60, 70, 80, 70, 100, 90, 70, 60],
-        "labels": ["Rédiger des écrits professionnels : dossier", "Analyser un cahier des charges", "Réaliser un audit", "Définir les valeurs, un esprit et un ton", "Discerner les cibles en construisant des personas", " Définir un positionnement produit", " Proposer un axe de communication au commanditaire", "Établir un plan de communication et un planning des actions à entreprendre", "Rédiger une charte éditoriale pour un site web, un blog, un réseau social (préconisations rédactionnelles, référencement naturel)", "Réaliser des prototypes de communication", "Construire un support de communication (diaporama) clair et efficace pour présenter ses choix stratégiques et le plan de communication"],
-        "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
-        "borderColor": ["rgba(54, 162, 235, 1)"],
-        "borderWidth": 1
-      },
-      {
-        "label": "SAE105",
-        "data": [100, 60, 77, 80, 60, 80, 70, 80, 100],
-        "labels": ["Organiser un projet web en PHP/HTML/CSS", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédias (vidéos, photos) et des éléments de design (couleur, typo, etc) - niveau 1", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédia et de design - niveau 2", "Générer des pages à partir d'un jeu de données fournis (fichiers json et api.php)", "S'approprier / Manipuler les données au format JSON", "Traduire des pages en HTML/CSS, à partir d'une maquette d'interfaces simples, de type Figma", "Appliquer les connaissances en ergonomie IHM en vue d'adapter la conception et le fonctionnement des interfaces d'un site aux besoins des utilisateurs/cibles", "Elaborer un mockup, wireframes, flows et maquettes - niveau 1", "Définir des planches univers > styles"],
-        "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
-        "borderColor": ["rgba(54, 162, 235, 1)"],
-        "borderWidth": 1
-      }
-    ]
-  }
+  "datasets": [
+    {
+      "label": "SAE101",
+      "data": [60, 80, 50, 70, 60],
+      "labels": ["Identifier les cibles (critères socio-économiques, démographiques, géographiques, culturels...)", "Analyser des formes médiatiques et leur sémiotique", "Produire des analyses statistiques descriptives et les interpréter pour évaluer un contexte socio-économique", "Evaluer un site web, un produit multimédia ou un dispositif interactif existant en s’appuyant sur des guides de bonnes pratiques", "Présenter une organisation, ses activités et son environnement (économique, sociologique, culturel, juridique, technologique, communicationnel et médiatique)"],
+      "backgroundColor": ["rgba(255, 99, 132, 0.2)"],
+      "borderColor": ["rgba(255, 99, 132, 1)"],
+      "borderWidth": 1
+    },
+{
+      "label": "SAE202",
+      "data": [50, 40, 45, 60, 70, 80, 70, 100, 90, 70, 60],
+      "labels": ["Rédiger des écrits professionnels : dossier", "Analyser un cahier des charges", "Réaliser un audit", "Définir les valeurs, un esprit et un ton", "Discerner les cibles en construisant des personas", " Définir un positionnement produit", " Proposer un axe de communication au commanditaire", "Établir un plan de communication et un planning des actions à entreprendre", "Rédiger une charte éditoriale pour un site web, un blog, un réseau social (préconisations rédactionnelles, référencement naturel)", "Réaliser des prototypes de communication", "Construire un support de communication (diaporama) clair et efficace pour présenter ses choix stratégiques et le plan de communication"],
+      "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
+      "borderColor": ["rgba(54, 162, 235, 1)"],
+      "borderWidth": 1
+    },
+{
+      "label": "SAE105",
+      "data": [100, 60, 77, 80, 60, 80, 70, 80, 100],
+      "labels": ["Organiser un projet web en PHP/HTML/CSS", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédias (vidéos, photos) et des éléments de design (couleur, typo, etc) - niveau 1", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédia et de design - niveau 2", "Générer des pages à partir d'un jeu de données fournis (fichiers json et api.php)", "S'approprier / Manipuler les données au format JSON", "Traduire des pages en HTML/CSS, à partir d'une maquette d'interfaces simples, de type Figma", "Appliquer les connaissances en ergonomie IHM en vue d'adapter la conception et le fonctionnement des interfaces d'un site aux besoins des utilisateurs/cibles", "Elaborer un mockup, wireframes, flows et maquettes - niveau 1", "Définir des planches univers > styles"],
+      "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
+      "borderColor": ["rgba(54, 162, 235, 1)"],
+      "borderWidth": 1
+    }
+  ]
+}

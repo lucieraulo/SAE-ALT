@@ -8,17 +8,74 @@
     <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 <body>
-    <div class="mainContainer">
-        <select id="saeSelect">
-            <option value="0">-- selectioner une option --</option>
-        </select>
-        <div id="my_dataviz"></div>
-        <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
-        <div id="chart-container"></div>
-    </div>
+    <header>
+        <a href="index.html">Théo Hervé</a>
+        <nav>
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">à propos</a></li>
+                <li><a href="">portfolio</a></li>
+                <li><a href="">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="section-header">
+            <div class="colorfilter"></div>
+            <img src="img/theo-herve-bg-header.png" alt="">
+
+            <div class="headercontent">
+                <p>Bienvenu sur le Portfolio de</p>
+                <h1>Théo Hervé</h1>
+                <p class="header-statut">Jr. Webdesigner</p>
+            </div>
+
+        </div>
+        <section class="section-about">
+            <div class="section-about-content">
+                <p>Je m’appelle Théo HERVÉ, je suis en 2ème année de BUT MMI à l’IUT de Lannion. Durant cette formation j’ai acquis de multiples compétences.</p>
+                <div class="section-mes-competences">
+                    <h2>Mes Compétences</h2>
+                    <div class="tags-container">
+                        <span class="red">COMPRENDRE</span>
+                        <span class="yellow">CONCEVOIR</span>
+                        <span class="green">EXPRIMER</span>
+                        <span class="blue">DEVELOPPER</span>
+                        <span class="purple">ENTREPRENDRE</span>
+                    </div>
+                    
+                </div>
+                <div class="section-mes-competences"><h2 class="visual-title">Mes Compétences - Visualisation</h2></div>
+                
+            </div>
+
+        </section>
+ 
+            <div class="mainContainer">
+                <select id="saeSelect">
+                    <option value="0">-- selectioner une option --</option>
+                </select>
+                <div id="my_dataviz"></div>
+                <canvas id="chartId" width="1000" height="400"></canvas>
+                <div id="chart-container"></div>
+            </div>
+    </main>
+    <footer></footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
     <script src="script.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
 </body>
 </html>
+
+
+
+<!-- <div class="mainContainer">
+    <select id="saeSelect">
+        <option value="0">-- selectioner une option --</option>
+    </select>
+    <div id="my_dataviz"></div>
+    <canvas id="chartId" width="1000" height="400"></canvas>
+    <div id="chart-container"></div>
+</div> -->
