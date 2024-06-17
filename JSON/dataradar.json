@@ -3,7 +3,7 @@
     {
       "label": "SAE101",
       "data": [60, 80, 50, 70, 60],
-      "labels": ["Identifier les cibles (critères socio-économiques, démographiques, géographiques, culturels...)", "Analyser des formes médiatiques et leur sémiotique", "Produire des analyses statistiques descriptives et les interpréter pour évaluer un contexte socio-économique", "Evaluer un site web, un produit multimédia ou un dispositif interactif existant en s’appuyant sur des guides de bonnes pratiques", "Présenter une organisation, ses activités et son environnement (économique, sociologique, culturel, juridique, technologique, communicationnel et médiatique)"],
+      "labels": ["Identifier les cibles", "Analyser des formes médiatiques et leur sémiotique", "Produire des analyses statistiques", "Evaluer un site web", "Présenter une organisation"],
       "backgroundColor": ["rgba(255, 99, 132, 0.2)"],
       "borderColor": ["rgba(255, 99, 132, 1)"],
       "borderWidth": 1
@@ -18,8 +18,24 @@
     },
 {
       "label": "SAE105",
-      "data": [100, 60, 77, 80, 60, 80, 70, 80, 100],
-      "labels": ["Organiser un projet web en PHP/HTML/CSS", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédias (vidéos, photos) et des éléments de design (couleur, typo, etc) - niveau 1", "Développer des pages flexibles simples en non responsive et ajouter des éléments multimédia et de design - niveau 2", "Générer des pages à partir d'un jeu de données fournis (fichiers json et api.php)", "S'approprier / Manipuler les données au format JSON", "Traduire des pages en HTML/CSS, à partir d'une maquette d'interfaces simples, de type Figma", "Appliquer les connaissances en ergonomie IHM en vue d'adapter la conception et le fonctionnement des interfaces d'un site aux besoins des utilisateurs/cibles", "Elaborer un mockup, wireframes, flows et maquettes - niveau 1", "Définir des planches univers > styles"],
+      "data": [100, 60, 80, 60, 80, 70, 80, 100],
+      "labels": ["Organiser un projet web en PHP/HTML/CSS", "Développer des pages flexibles simples", "Générer des pages à partir d'un jeu de données", "S'approprier / Manipuler les données au format JSON", "Traduire des pages en HTML/CSS, à partir d'une maquette", "Appliquer les connaissances et concevoir un site aux besoins des utilisateurs", "Elaborer un mockup, wireframes, flows et maquettes", "Définir des planches univers > styles"],
+      "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
+      "borderColor": ["rgba(54, 162, 235, 1)"],
+      "borderWidth": 1
+    },
+    {
+      "label": "SAE106",
+      "data": [50, 80, 90, 60, 80, 90],
+      "labels": ["Intégrer le programme de Fabrik Ta Pépite dans le cadre de son projet professionnel", "Découvrir ce qu'est l'entrepreneuriat", "Lister les secteurs, organismes et entreprises clés au niveau local", "Rédiger un cahier des charges", "définir les grandes étapes de réalisation et les actions possibles", "Définir une idée innovante pour un projet"],
+      "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
+      "borderColor": ["rgba(54, 162, 235, 1)"],
+      "borderWidth": 1
+    },
+    {
+      "label": "SAE103",
+      "data": [100, 80, 90, 90, 100, 100],
+      "labels": ["Créer une planche de tendances (moodboard)", "Chercher un style d'illustration ", "Concevoir / Structurer une affiche", "Produire un visuel impactant et ayant du sens", "Réaliser des compositions graphiques simples avec Affinity", "Intégrer la chaine pre-print notamment pour l'export de fichier pour impression"],
       "backgroundColor": ["rgba(54, 162, 235, 0.2)"],
       "borderColor": ["rgba(54, 162, 235, 1)"],
       "borderWidth": 1
